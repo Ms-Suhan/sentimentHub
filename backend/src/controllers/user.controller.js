@@ -6,6 +6,7 @@ async function handleUserRegister(req, res){
     const {name, email, password} = req.body
 
     if(!name || !email || !password){
+        res.status(400)
         return res.json({"Message" : "All Fields are necessary"})
     }
 
